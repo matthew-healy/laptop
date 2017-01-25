@@ -105,6 +105,9 @@ brew bundle --file=- <<EOF
 tap "homebrew/services"
 tap "caskroom/fonts"
 
+# Accept Xcode licence automatically
+/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -license accept
+
 # Unix
 brew "git"
 brew "zsh"
