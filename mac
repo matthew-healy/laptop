@@ -61,6 +61,9 @@ fi
 # shellcheck disable=SC2016
 append_to_zshrc 'export PATH="$HOME/.bin:$PATH"'
 
+# Accept Xcode licence automatically
+sudo /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -license accept
+
 HOMEBREW_PREFIX="/usr/local"
 create_folder_if_not_there "$HOMEBREW_PREFIX"
 
@@ -104,9 +107,6 @@ brew update
 brew bundle --file=- <<EOF
 tap "homebrew/services"
 tap "caskroom/fonts"
-
-# Accept Xcode licence automatically
-sudo /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -license accept
 
 # Unix
 brew "git"
