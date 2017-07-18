@@ -167,6 +167,7 @@ install_gui_app "google chrome" "google-chrome"
 # Text editing
 install_gui_app "atom" "atom"
 install_gui_app "sublime text" "sublime-text"
+install_gui_app "visual-studio-code" "visual-studio-code"
 
 # Chat
 install_gui_app "slack" "slack"
@@ -205,8 +206,8 @@ if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"
 fi
 
-fancy_echo "Setting sublime as default text editor ..."
-append_to_zshrc "export EDITOR='subl -w -n'"
+fancy_echo "Setting VS Code as default text editor ..."
+append_to_zshrc "export EDITOR='vsc'"
 append_to_zshrc "export PAGER='less -f'"
 
 fancy_echo "Rebinding # to the § key"
@@ -299,6 +300,19 @@ cat > "$SUBLIME_PREFS_FILE" << EOM
   "word_wrap": true
 }
 EOM
+
+fancy_echo "Creating 'vsc' command to open VS Code from Terminal ..."
+create_folder_if_not_there "/usr/local/bin"
+if [ ! -f /usr/local/bin/vsc ]; then
+  ln -s /Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron  /usr/local/bin/vsc
+fi
+
+# Add Ruby extension for VSC
+code --install-extension rebornix.Ruby
+
+# Add necessary Ruby gems for debugging in VSC
+gem_install_or_update "ruby-debug-ide"
+gem_install_or_update "debase"
 
 fancy_echo ""
 
