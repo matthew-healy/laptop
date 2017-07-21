@@ -167,7 +167,7 @@ install_gui_app "google chrome" "google-chrome"
 # Text editing
 install_gui_app "atom" "atom"
 install_gui_app "sublime text" "sublime-text"
-install_gui_app "visual-studio-code" "visual-studio-code"
+install_gui_app "visual studio code" "visual-studio-code"
 
 # Chat
 install_gui_app "slack" "slack"
