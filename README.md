@@ -85,7 +85,7 @@ Databases:
 GUI Apps:
 
 * Google Chrome for web browsing
-* Atom and Sublime for text editing
+* Visual Studio Code, Atom and Sublime Text for text editing
 * Slack for team chat
 * Android Studio for mobile development
 
