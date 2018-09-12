@@ -196,6 +196,7 @@ cat > "$HOME/.irbrc" << EOM
 require "awesome_print"
 AwesomePrint.irb!
 require 'irb/completion'
+IRB.conf[:AUTO_INDENT] = true
 EOM
 if [ ! -f "$HOME/.aprc" ]; then
   touch "$HOME/.aprc"
