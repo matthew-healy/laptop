@@ -187,6 +187,16 @@ rbenv rehash
 fancy_echo "Skipping rdoc generation when we install a gem"
 echo 'gem: --no-rdoc --no-ri' >> ~/.gemrc
 
+fancy_echo "Installing and configuring Awesome Print for IRB"
+gem install awesome_print
+if [ ! -f "$HOME/.irbrc" ]; then
+  touch "$HOME/.irbrc"
+fi
+cat > "$HOME/.irbrc" << EOM
+require "awesome_print"
+AwesomePrint.irb!
+EOM
+
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
   # shellcheck disable=SC1090
