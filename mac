@@ -196,6 +196,28 @@ cat > "$HOME/.irbrc" << EOM
 require "awesome_print"
 AwesomePrint.irb!
 EOM
+if [ ! -f "$HOME/.aprc" ]; then
+  touch "$HOME/.aprc"
+fi
+cat > "$HOME/.aprc" << EOM
+AwesomePrint.defaults = {
+  index: false,
+  indent: 2,
+  sort_vars: false,
+  color: {
+    string: :cyanish,
+    symbol: :purple,
+    array: :white,
+    hash: :purpleish,
+    trueclass: :green,
+    falseclass: :red,
+    nilclass: :redish,
+    class: :yellow,
+    integer: :blue,
+    float: :blueish
+  }
+}
+EOM
 
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
