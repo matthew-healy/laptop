@@ -195,6 +195,7 @@ fi
 cat > "$HOME/.irbrc" << EOM
 require "awesome_print"
 AwesomePrint.irb!
+require 'irb/completion'
 EOM
 if [ ! -f "$HOME/.aprc" ]; then
   touch "$HOME/.aprc"
