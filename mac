@@ -189,9 +189,7 @@ echo 'gem: --no-rdoc --no-ri' >> ~/.gemrc
 
 fancy_echo "Installing and configuring Awesome Print for IRB"
 gem install awesome_print
-if [ ! -f "$HOME/.irbrc" ]; then
-  touch "$HOME/.irbrc"
-fi
+touch "$HOME/.irbrc"
 cat > "$HOME/.irbrc" << EOM
 require "awesome_print"
 AwesomePrint.irb!
@@ -206,9 +204,7 @@ IRB.conf[:PROMPT][:CUSTOM] = {
 }
 IRB.conf[:PROMPT_MODE] = :CUSTOM
 EOM
-if [ ! -f "$HOME/.aprc" ]; then
-  touch "$HOME/.aprc"
-fi
+touch "$HOME/.aprc"
 cat > "$HOME/.aprc" << EOM
 AwesomePrint.defaults = {
   index: false,
