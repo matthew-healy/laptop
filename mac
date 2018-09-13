@@ -188,7 +188,7 @@ fancy_echo "Skipping rdoc generation when we install a gem"
 echo 'gem: --no-rdoc --no-ri' >> ~/.gemrc
 
 fancy_echo "Installing and configuring Awesome Print for IRB"
-gem install awesome_print
+gem_install_or_update 'awesome_print'
 touch "$HOME/.irbrc"
 cat > "$HOME/.irbrc" << EOM
 require "awesome_print"
