@@ -191,7 +191,7 @@ fancy_echo "Installing and configuring Awesome Print for IRB"
 gem_install_or_update 'awesome_print'
 cat >> "$HOME/.irbrc" << EOM
 # CodeClan deafault configuration for IRB
-require "awesome_print"
+require 'awesome_print'
 AwesomePrint.irb!
 require 'irb/completion'
 IRB.conf[:AUTO_INDENT] = true
