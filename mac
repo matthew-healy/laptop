@@ -190,6 +190,7 @@ echo 'gem: --no-rdoc --no-ri' >> ~/.gemrc
 fancy_echo "Installing and configuring Awesome Print for IRB"
 gem_install_or_update 'awesome_print'
 cat >> "$HOME/.irbrc" << EOM
+# CodeClan deafault configuration for IRB
 require "awesome_print"
 AwesomePrint.irb!
 require 'irb/completion'
@@ -204,6 +205,8 @@ IRB.conf[:PROMPT][:CUSTOM] = {
 IRB.conf[:PROMPT_MODE] = :CUSTOM
 EOM
 cat >> "$HOME/.aprc" << EOM
+# CodeClan deafault configuration for Awesome Print (Ruby / IRB)
+# Find ptions for customisation here: https://github.com/awesome-print/awesome_print#usage
 AwesomePrint.defaults = {
   index: false,
   indent: 2,
