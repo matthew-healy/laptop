@@ -43,8 +43,8 @@ log_version_info() {
     "git") version_info="$(git --version)" ;;
     "zsh") version_info="$(zsh --version)" ;;
     "node") version_info="$(node -v)" ;;
-    "rbenv") version_info="$(rbenv -v)" ;;
-    "ruby-build") version_info="$(ruby-build --version)" ;;
+    # "rbenv") version_info="$(rbenv -v)" ;;
+    # "ruby-build") version_info="$(ruby-build --version)" ;;
     "postgres") version_info="$(postgres --version)" ;;
     # java seems to print to stderr for no apparent reason. `2>&1` redirects
     # stderr to stdout to silence the CLI output and allow it to be captured in
@@ -60,8 +60,8 @@ CLI_APPS=(
   "git"
   "zsh"
   "node"
-  "rbenv"
-  "ruby-build"
+  # "rbenv"
+  # "ruby-build"
   "postgres"
   "java"
   "mongod"
@@ -94,7 +94,7 @@ GUI_APPS=(
   "atom"
   "slack"
   "insomnia"
-  "intellij idea ce"
+  # "intellij idea ce"
   "mongodb compass community"
 )
 

@@ -103,14 +103,14 @@ case "$SHELL" in
     ;;
 esac
 
-gem_install_or_update() {
-  if gem list "$1" --installed > /dev/null; then
-    gem update "$@"
-  else
-    gem install "$@"
-    rbenv rehash
-  fi
-}
+# gem_install_or_update() {
+#   if gem list "$1" --installed > /dev/null; then
+#     gem update "$@"
+#   else
+#     gem install "$@"
+#     rbenv rehash
+#   fi
+# }
 
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
@@ -181,36 +181,36 @@ install_gui_app "slack" "slack"
 # Insomnia
 install_gui_app "insomnia" "insomnia"
 
-fancy_echo "Configuring Ruby ..."
-find_latest_ruby() {
-  rbenv install -l | grep -v - | tail -1 | sed -e 's/^ *//'
-}
-
-ruby_version="2.4.1"
-# shellcheck disable=SC2016
-append_to_zshrc 'eval "$(rbenv init - --no-rehash)"' 1
-eval "$(rbenv init -)"
-
-if ! rbenv versions | grep -Fq "$ruby_version"; then
-  RUBY_CONFIGURE_OPTS=--with-openssl-dir=/usr/local/opt/openssl rbenv install -s "$ruby_version"
-fi
-
-rbenv global "$ruby_version"
-rbenv shell "$ruby_version"
-gem update --system
-gem_install_or_update 'bundler'
-number_of_cores=$(sysctl -n hw.ncpu)
-bundle config --global jobs $((number_of_cores - 1))
-rbenv rehash
-
-fancy_echo "Skipping rdoc generation when we install a gem"
-echo 'gem: --no-rdoc --no-ri' >> ~/.gemrc
-
-if [ -f "$HOME/.laptop.local" ]; then
-  fancy_echo "Running your customizations from ~/.laptop.local ..."
-  # shellcheck disable=SC1090
-  . "$HOME/.laptop.local"
-fi
+# fancy_echo "Configuring Ruby ..."
+# find_latest_ruby() {
+#   rbenv install -l | grep -v - | tail -1 | sed -e 's/^ *//'
+# }
+#
+# ruby_version="2.4.1"
+# # shellcheck disable=SC2016
+# append_to_zshrc 'eval "$(rbenv init - --no-rehash)"' 1
+# eval "$(rbenv init -)"
+#
+# if ! rbenv versions | grep -Fq "$ruby_version"; then
+#   RUBY_CONFIGURE_OPTS=--with-openssl-dir=/usr/local/opt/openssl rbenv install -s "$ruby_version"
+# fi
+#
+# rbenv global "$ruby_version"
+# rbenv shell "$ruby_version"
+# gem update --system
+# gem_install_or_update 'bundler'
+# number_of_cores=$(sysctl -n hw.ncpu)
+# bundle config --global jobs $((number_of_cores - 1))
+# rbenv rehash
+#
+# fancy_echo "Skipping rdoc generation when we install a gem"
+# echo 'gem: --no-rdoc --no-ri' >> ~/.gemrc
+#
+# if [ -f "$HOME/.laptop.local" ]; then
+#   fancy_echo "Running your customizations from ~/.laptop.local ..."
+#   # shellcheck disable=SC1090
+#   . "$HOME/.laptop.local"
+# fi
 
 fancy_echo "Setting Atom as default text editor ..."
 append_to_zshrc "export EDITOR='atom -nw'"
@@ -237,8 +237,8 @@ if ! psql -lqt | cut -d \| -f 1 | grep -qw "$(whoami)" >/dev/null; then
 fi
 
 # IntelliJ
-fancy_echo "Installing IntelliJ"
-install_gui_app "intellij idea ce" "intellij-idea-ce"
+# fancy_echo "Installing IntelliJ"
+# install_gui_app "intellij idea ce" "intellij-idea-ce"
 
 fancy_echo "Checking for unsuccessful installs"
 
