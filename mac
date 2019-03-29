@@ -146,8 +146,8 @@ brew "tree"
 
 # Programming languages
 brew "node"
-brew "rbenv"
-brew "ruby-build"
+# brew "rbenv"
+# brew "ruby-build"
 
 # Fix for forcing java8 install
 tap "caskroom/versions"
