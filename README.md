@@ -15,7 +15,7 @@ Older versions may work but aren't tested.
 
 ## Install
 
-! Make sure your laptop in plugged in !
+! Make sure your laptop is plugged in !
 
 Download and review the script:
 
