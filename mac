@@ -242,6 +242,7 @@ EOM
 fancy_echo "Globally ignoring .DS_Store files"
 echo .DS_Store >> ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
+git config --global init.defaultBranch main
 
 fancy_echo "Creating Postgres database under current user name"
 if ! psql -lqt | cut -d \| -f 1 | grep -qw "$(whoami)" >/dev/null; then
