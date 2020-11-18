@@ -156,7 +156,7 @@ cask "adoptopenjdk/openjdk/adoptopenjdk8"
 brew "postgres", restart_service: true
 tap "mongodb/brew"
 brew  "mongodb-community", restart_service: true
-cask "mongodb-compass-community"
+cask "mongodb-compass"
 
 # Fonts
 cask "font-opendyslexic"
