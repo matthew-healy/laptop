@@ -2,23 +2,9 @@
 
 You should be here because you got the following message -
 
-<style
-  type="text/css">
-    .red {
-      font-weight: bold;
-      color: red;
-    }
-    .blue {
-      font-weight: bold;
-      color: blue;
-    }
-</style>
-
 ---
 
-``Install of Rosetta 2 finished successfully``
-
-<span class="blue">``CodeClan ``</span><span class="red">``- Additional manual steps required please visit...``</span>
+![Terminal Messgage](images/terminal_msg.png)
 
 ---
 
@@ -36,11 +22,11 @@ Congratulations! You have a brand new Apple Silicon based Mac. You're at the ble
 
 - And click once on **Terminal**
 
-![Finder](images/finder_terminal.png)
+![Finder - Terminal](images/finder_terminal.png)
 
 - Hold command **(&#8984;)** and press **I** (for **I**nfo) or choose **File** > **Get Info** from the menu at the top of the screen. Put a tick in the **"Open using Rosetta"** checkbox.
 
-![Finder](images/get_info.png)
+![Get Info](images/get_info.png)
 
 - Close the **Terminal Info** window with the red dot in the top left corner.
 
