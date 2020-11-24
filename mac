@@ -68,7 +68,7 @@ install_gui_app() {
 # Check for Terminal running in ARM mode, install Rosetta, exit script
 ARCH=$(arch)
 if [[ "$ARCH" == "arm64" ]]; then
-    # /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+    /usr/sbin/softwareupdate --install-rosetta --agree-to-license
     fancy_echo "\e[1;34m *** CodeClan - \e[1;31mAdditional manual steps required please visit - \033[0m"
     fancy_echo "https://github.com/codeclan/laptop/apple_silicon.md"
     fancy_echo ""
