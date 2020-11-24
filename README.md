@@ -8,14 +8,14 @@ It can be run multiple times on the same machine safely. It installs, upgrades, 
 
 We support:
 
-* macOS Mojave (10.14)
+* macOS Big Sur (11)
 * macOS Catalina (10.15)
 
 Older versions may work but aren't tested.
 
 ## Install
 
-! Make sure your laptop is plugged in !
+(These commands should be run in **Terminal**)
 
 Download and review the script:
 
@@ -39,6 +39,16 @@ You can repeat this by running the following lines in terminal:
 curl --remote-name https://raw.githubusercontent.com/codeclan/laptop/master/laptop_install_test
 sh laptop_install_test
 ```
+--- 
+> Please follow instructions at the provided [link](apple_silicon.md) if you see -
+
+
+![Terminal](images/terminal_msg.png)
+
+(**NOTE** - You will need to run the script again)
+
+---
+
 
 ## What it sets up
 
