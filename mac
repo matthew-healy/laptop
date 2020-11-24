@@ -64,6 +64,16 @@ install_gui_app() {
   fi
 }
 
+
+# Check for Terminal running in ARM mode, install Rosetta, restart script
+ARCH=$(arch)
+if [[ "$ARCH" == "arm64" ]]; then
+    # /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+    fancy_echo "\e[1;34mCodeClan - \e[1;31mAdditional manual steps required please visit - \033[0m"
+    echo "https://github.com/codeclan/laptop/apple_silicon.md"
+    exit 0
+fi
+
 # Check for Xcode Devtools and wait for them to be installed before continuing
 xcode-select -p 2>/dev/null
 return_code=$?
@@ -129,7 +139,6 @@ if brew list | grep -Fq brew-cask; then
   fancy_echo "Uninstalling old Homebrew-Cask ..."
   brew uninstall --force brew-cask
 fi
-
 
 fancy_echo "Updating Homebrew formulae ..."
 brew update

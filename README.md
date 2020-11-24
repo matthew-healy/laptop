@@ -40,6 +40,35 @@ curl --remote-name https://raw.githubusercontent.com/codeclan/laptop/master/lapt
 sh laptop_install_test
 ```
 
+<style
+  type="text/css">
+    .red {
+      font-weight: bold;
+      color: red;
+    }
+    .blue {
+      font-weight: bold;
+      color: blue;
+    }
+</style>
+
+--- 
+> Please follow instructions at the provided [link](apple_silicon.md) if you see -
+
+``Install of Rosetta 2 finished successfully``
+
+<span class="blue">``CodeClan ``</span><span class="red">``- Additional manual steps required please visit -``</span>
+
+``https://github.com/codeclan/laptop/apple_silicon.md``
+
+
+
+---
+
+
+
+
+
 ## What it sets up
 
 ### macOS tools:
