@@ -8,11 +8,11 @@ You should be here because you got the following message -
 
 ---
 
-Congratulations! You have a brand new Apple Silicon based Mac. You're at the bleeding-edge of Mac developments. But it means we have to configure your Terminal to make sure things still work on the course.
+Congratulations! You have a brand new Apple Silicon based Mac. You're at the bleeding-edge of Mac developments. But it means we have to configure your Terminal to make sure things still work on the course. Please follow these steps -
 
-- Please switch to Terminal (you should see "Terminal" in the top left of the screen)
+- Please switch to **Terminal** (you should see **"Terminal"** in the top left of the screen)
 
-- Quit Terminal by holding command **(&#8984;)** and pressing **Q**. Or choose **Terminal**  > **Quit Terminal** from the menu at the top of the screen.
+- Quit **Terminal** by holding command **(&#8984;)** and pressing **Q**. Or choose **Terminal**  > **Quit Terminal** from the menu at the top of the screen.
 
 - Click on **Finder** in the Dock
 
@@ -34,7 +34,7 @@ Congratulations! You have a brand new Apple Silicon based Mac. You're at the ble
 
 - Type `arch` and hit **Enter**. You should see - `i386` or `x86_64`
 
-- If you don't - check the tick is in **"Open using Rosetta"** when you **Get Info** on the **Terminal**
+- (If you don't - check the tick is in **"Open using Rosetta"** when you **Get Info** on the **Terminal**)
 
 - **IMPORTANT:** You must now run the script again and can refer back to the [original Page](https://github.com/codeclan/laptop)
 
