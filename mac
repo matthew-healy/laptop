@@ -65,7 +65,7 @@ install_gui_app() {
 }
 
 
-# Check for Terminal running in ARM mode, install Rosetta, restart script
+# Check for Terminal running in ARM mode, install Rosetta, exit script
 ARCH=$(arch)
 if [[ "$ARCH" == "arm64" ]]; then
     # /usr/sbin/softwareupdate --install-rosetta --agree-to-license
