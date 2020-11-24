@@ -32,13 +32,11 @@ Congratulations! You have a brand new Apple Silicon based Mac. You're at the ble
 
 - Open **Terminal** again  
 
-- Type `arch` and hit **Enter**. You should see -
+- Type `arch` and hit **Enter**. You should see - `i386` or `x86_64`
 
-`i386` or `x86_64`
+- If you don't - check the tick is in **"Open using Rosetta"** when you **Get Info** on the **Terminal**
 
-  - If you don't - check the tick is in **"Open using Rosetta"** when you **Get Info** on the **Terminal**
-
-- You can now run the script again 
+- You can now run the script again and refer back to the [original Page](https://github.com/codeclan/laptop)
 
 ```sh mac 2>&1 | tee ~/laptop.log```
 
