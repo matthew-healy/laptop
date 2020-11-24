@@ -34,7 +34,7 @@ Congratulations! You have a brand new Apple Silicon based Mac. You're at the ble
 
 - Type `arch` and hit **Enter**. You should see - `i386` or `x86_64`
 
-- (If you don't - check the tick is in **"Open using Rosetta"** when you **Get Info** on the **Terminal**)
+- (If you don't - check the tick is in **"Open using Rosetta"** when you **Get Info** on the **Terminal**)  
 
 - **IMPORTANT:** You must now run the script again and can refer back to the [original Page](https://github.com/codeclan/laptop)
 
