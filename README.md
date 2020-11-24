@@ -8,14 +8,14 @@ It can be run multiple times on the same machine safely. It installs, upgrades, 
 
 We support:
 
-* macOS Mojave (10.14)
+* macOS Big Sur (11)
 * macOS Catalina (10.15)
 
 Older versions may work but aren't tested.
 
 ## Install
 
-! Make sure your laptop is plugged in !
+(These commands should be run in **Terminal**)
 
 Download and review the script:
 
@@ -45,6 +45,7 @@ sh laptop_install_test
 
 ![Terminal](images/terminal_msg.png)
 
+(**NOTE** - You will need to run the script again)
 
 ---
 
