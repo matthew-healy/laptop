@@ -60,7 +60,7 @@ install_gui_app() {
 
   is_app_installed "$appName"
   if [ $? -eq 1 ]; then
-    brew cask install "$caskName"
+    brew install --cask "$caskName"
   fi
 }
 
@@ -136,7 +136,7 @@ if ! command -v brew >/dev/null; then
     export PATH="/usr/local/bin:$PATH"
 fi
 
-if brew list | grep -Fq brew-cask; then
+if brew list --formula | grep -Fq brew-cask; then
   fancy_echo "Uninstalling old Homebrew-Cask ..."
   brew uninstall --force brew-cask
 fi
@@ -145,7 +145,7 @@ fancy_echo "Updating Homebrew formulae ..."
 brew update
 brew bundle --file=- <<EOF
 tap "homebrew/services"
-tap "caskroom/fonts"
+tap "homebrew/cask-fonts"
 
 # Unix
 brew "git"
@@ -169,7 +169,7 @@ brew  "mongodb-community", restart_service: true
 cask "mongodb-compass"
 
 # Fonts
-cask "font-opendyslexic"
+cask "font-open-dyslexic"
 EOF
 
 fancy_echo "Installing Oh-My-Zsh ..."
