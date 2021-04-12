@@ -227,6 +227,45 @@ rbenv rehash
 fancy_echo "Skipping rdoc generation when we install a gem"
 echo 'gem: --no-rdoc --no-ri' >> ~/.gemrc
 
+fancy_echo "Installing and configuring Awesome Print for IRB"
+gem_install_or_update 'awesome_print'
+cat >> "$HOME/.irbrc" << EOM
+# CodeClan deafault configuration for IRB
+require 'awesome_print'
+AwesomePrint.irb!
+require 'irb/completion'
+IRB.conf[:AUTO_INDENT] = true
+IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:PROMPT][:CUSTOM] = {
+  :PROMPT_I => 'irb> ',
+  :PROMPT_S => 'irb>%l ',
+  :PROMPT_C => 'irb>> ',
+  :PROMPT_N => 'irb>> '
+}
+IRB.conf[:PROMPT_MODE] = :CUSTOM
+EOM
+cat >> "$HOME/.aprc" << EOM
+# CodeClan deafault configuration for Awesome Print (Ruby / IRB)
+# Find ptions for customisation here: https://github.com/awesome-print/awesome_print#usage
+AwesomePrint.defaults = {
+  index: false,
+  indent: 2,
+  sort_vars: false,
+  color: {
+    string: :cyanish,
+    symbol: :purple,
+    array: :white,
+    hash: :purpleish,
+    trueclass: :green,
+    falseclass: :red,
+    nilclass: :redish,
+    class: :yellow,
+    integer: :blue,
+    float: :blueish
+  }
+}
+EOM
+
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
   # shellcheck disable=SC1090
