@@ -4,7 +4,6 @@
 # Be prepared to turn your laptop (or desktop, no haters here)
 # into an awesome development machine.
 
-
 fancy_echo() {
   local fmt="$1"; shift
 
@@ -48,7 +47,7 @@ create_folder_if_not_there() {
 is_app_installed() {
     local appNameOrBundleId=$1 bundleId
 
-    # convert app name to bundle ID
+    # convert app name to bundle ID
     bundleId=$(osascript -e "id of application \"$appNameOrBundleId\"" 2>/dev/null) || { return 1; }
 
     # search for location of app with given bundle ID
@@ -169,6 +168,9 @@ cask "mongodb-compass"
 
 # Fonts
 cask "font-open-dyslexic"
+
+# Docker
+cask "docker"
 EOF
 
 fancy_echo "Installing Oh-My-Zsh ..."
@@ -180,10 +182,6 @@ fancy_echo "Installing GUI apps"
 
 # Web browsing
 install_gui_app "google chrome" "google-chrome"
-
-# Text editing
-install_gui_app "atom" "atom"
-apm install teletype
 
 # Chat
 install_gui_app "slack" "slack"
@@ -233,21 +231,6 @@ if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"
 fi
 
-fancy_echo "Setting Atom as default text editor ..."
-append_to_zshrc "export EDITOR='atom -nw'"
-append_to_zshrc "export PAGER='less -f'"
-
-fancy_echo "Rebinding # to the § key"
-create_folder_if_not_there "$HOME/Library/KeyBindings"
-MACOS_KEYMAP_FILE="$HOME/Library/KeyBindings/DefaultKeyBinding.dict"
-touch "$MACOS_KEYMAP_FILE"
-cat > "$MACOS_KEYMAP_FILE" << EOM
-{
-  /* Map '#' to the § key */
-  "§" = ("insertText:", "#");
-}
-EOM
-
 fancy_echo "Globally ignoring .DS_Store files"
 echo .DS_Store >> ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
@@ -268,4 +251,4 @@ fancy_echo "Checking for unsuccessful installs"
 curl --remote-name "https://raw.githubusercontent.com/codeclan/laptop/master/laptop_install_test"
 sh laptop_install_test
 
-fancy_echo "⚠️ Script has finished - please scroll the lines above and bring any errors to an instructor's attention during Meet Your Cohort ⚠️"
+fancy_echo "Beep bop boop - script has finished 😎 "
